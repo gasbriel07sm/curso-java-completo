@@ -7,7 +7,7 @@ public class ProdutoTeste {
         Locale.setDefault(Locale.US);
         Produto p1 = new Produto(); // instanciando um objeto do tipo Produto com o nome p1
         p1.nome = "Notebook";
-        p1.preco = 4536.89;
+        p1.preco = 4356.89;
         p1.desconto = 0.25;
 
         Produto p2 = new Produto(); // instanciando outro objeto do tipo Produto com o nome p2
@@ -16,8 +16,9 @@ public class ProdutoTeste {
         p2.preco = 12.56;
         p2.desconto = 0.29;
 
-        double precoFinal1 = p1.preco * (1 - p1.desconto);
-        double precoFinal2 = p2.preco * (1 - p2.desconto);
+        // chamando com (), significa que estamos chamando um método, porém ao chamar apenas com . será um atributo
+        double precoFinal1 = p1.precoComDesconto(); // chamando o método que calcula com desconto
+        double precoFinal2 = p2.precoComDesconto(0.1); // chamando método que calcula com desconto de gerente
 
         System.out.println("Produto 1:");
         System.out.printf("NOME: %s %nPREÇO: R$ %.2f %nDESCONTO: %.2f %%%n", p1.nome, p1.preco, p1.desconto);
