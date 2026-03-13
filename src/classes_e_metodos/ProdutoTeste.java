@@ -5,10 +5,7 @@ import java.util.Locale;
 public class ProdutoTeste {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Produto p1 = new Produto(); // instanciando um objeto do tipo Produto com o nome p1
-        p1.nome = "Notebook";
-        p1.preco = 4356.89;
-        p1.desconto = 0.25;
+        Produto p1 = new Produto("Notebook", 4356.89, 0.25); // instanciando um objeto com o construtor
 
         Produto p2 = new Produto(); // instanciando outro objeto do tipo Produto com o nome p2
         // podemos declarar as variáveis de tipo de algum objeto com var também, ficando = var p2 = new Produto();
