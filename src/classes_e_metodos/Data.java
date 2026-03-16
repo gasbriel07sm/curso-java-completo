@@ -7,18 +7,29 @@ public class Data {
     int ano;
 
     Data() {
-        dia = 1;
-        mes = 1;
-        ano = 1970;
+//        dia = 1;
+//        mes = 1;
+//        ano = 1970;
+         this(1, 1, 1970); // usando como método (chama um construtor)
     }
 
-    public Data(int diaInicial, int mesInicial, int anoInicial) {
-        dia = diaInicial;
-        mes = mesInicial;
-        ano = anoInicial;
+    // VALORES PADRÃO (quando não se define nada)
+    // byte, short, int, long -> 0
+    // float, double -> 0.0
+    // boolean -> false
+    // char -> '\u0000'
+    // objeto -> null (não aponta para nenhum local de memória)
+
+    // variáveis locais dentro de métodos, ... devem ser inicializadas, mesma coisa com constantes, devem ser inicializadas
+
+    public Data(int dia, int mes, int ano) {
+        this.dia = dia; // a palavra this serve para referenciar o objeto padrão (que está sendo criado naquele momento)
+        this.mes = mes;
+        this.ano = ano;
     }
 
     String obterDataFormatada() {
-        return String.format("%d/%d/%d", dia, mes, ano);
+        final String formato = "%d/%d/%d"; // variável / constante  local (dentro de um método) -> o escopo é apenas dentro daquele método, a partir daquela linha
+        return String.format(formato , this.dia, this.mes, this.ano);
     }
 }
