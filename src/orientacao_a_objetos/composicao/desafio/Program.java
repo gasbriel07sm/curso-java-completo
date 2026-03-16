@@ -3,22 +3,25 @@ package orientacao_a_objetos.composicao.desafio;
 public class Program {
     public static void main(String[] args) {
 
-        Produto p1 = new Produto("Arroz", 10.50);
-        Produto p2 = new Produto("Feijão", 13.60);
-        Produto p3 = new Produto("Macarrão", 4.50);
-        Item i1 = new Item(2, p1);
-        Item i2 = new Item(5, p2);
-        Item i3 = new Item(6, p3);
+        Cliente cliente = new Cliente("Gabriel");
 
-        Compra c = new Compra();
-        c.item.add(i1);
-        c.item.add(i2);
-        c.item.add(i3);
+        Compra c1 = new Compra();
+        c1.adicionarItem("Caneta", 9.67, 100);
+        c1.adicionarItem(new Produto("Notebook", 1897.88), 2);
 
-        Cliente cl = new Cliente("Gabriel");
-        cl.compra.add(c);
+        Compra c2 = new Compra();
+        c2.adicionarItem("Caderno", 10, 10);
+        c2.adicionarItem(new Produto("Impressora", 998.90), 1);
 
-        System.out.println("Total do Cliente: " + cl.obterValorTotal());
+//        cliente.compra.add(c1);
+//        cliente.compra.add(c2);
+
+        cliente.adicionarCompra(c1);
+        cliente.adicionarCompra(c2);
+
+        System.out.println("O valor total da compra é: R$ " + cliente.obterValorTotal());
+
+
 
     }
 }

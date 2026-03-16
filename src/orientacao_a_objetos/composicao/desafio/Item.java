@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Item {
 
-    int quantidade;
-    Produto produto;
+    final int quantidade;
+    final Produto produto;
 
     public Item(int quantidade, Produto produto) {
         this.quantidade = quantidade;

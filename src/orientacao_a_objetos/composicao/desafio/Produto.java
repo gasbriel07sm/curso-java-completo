@@ -2,8 +2,8 @@ package orientacao_a_objetos.composicao.desafio;
 
 public class Produto {
 
-    String nome;
-    double preco;
+    final String nome;
+    final double preco;
 
     public Produto(String nome, double preco) {
         this.nome = nome;

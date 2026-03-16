@@ -5,11 +5,15 @@ import java.util.List;
 
 public class Cliente {
 
-    String nomeCliente;
-    List<Compra> compra = new ArrayList<>();
+    final String nomeCliente;
+    final List<Compra> compra = new ArrayList<>();
 
     public Cliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
+    }
+
+    void adicionarCompra(Compra compra) {
+        this.compra.add(compra);
     }
 
     double obterValorTotal() {
