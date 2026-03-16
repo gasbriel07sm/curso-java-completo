@@ -5,13 +5,13 @@ import java.util.Locale;
 public class ProdutoTeste {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Produto p1 = new Produto("Notebook", 4356.89, 0.25); // instanciando um objeto com o construtor
+        Produto p1 = new Produto("Notebook", 4356.89); // instanciando um objeto com o construtor
 
         Produto p2 = new Produto(); // instanciando outro objeto do tipo Produto com o nome p2
         // podemos declarar as variáveis de tipo de algum objeto com var também, ficando = var p2 = new Produto();
         p2.nome = "Caneta Preta";
         p2.preco = 12.56;
-        p2.desconto = 0.29;
+        Produto.desconto = 0.29; // colocando valor em um mebro estático
 
         // chamando com (), significa que estamos chamando um método, porém ao chamar apenas com . será um atributo
         double precoFinal1 = p1.precoComDesconto(); // chamando o método que calcula com desconto
