@@ -1,4 +1,8 @@
-package orientacao_a_objetos.heranca.desafio;
+package orientacao_a_objetos.heranca.teste;
+
+import orientacao_a_objetos.heranca.desafio.Carro;
+import orientacao_a_objetos.heranca.desafio.Civic;
+import orientacao_a_objetos.heranca.desafio.Ferrari;
 
 public class CarroTeste {
     public static void main(String[] args) {
