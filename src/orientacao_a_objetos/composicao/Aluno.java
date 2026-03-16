@@ -1,0 +1,29 @@
+package orientacao_a_objetos.composicao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Aluno {
+    // Relacionamento MUITO para MUITOS
+
+    final String nome;
+    final List<Curso> cursos = new ArrayList<>();
+
+    public Aluno(String nome) {
+        this.nome = nome;
+    }
+
+    Curso obterCursoPorNome(String nome) {
+        for (Curso curso: this.cursos) {
+            if (curso.nome.equalsIgnoreCase(nome)) {
+                return curso;
+            }
+        }
+        return null;
+    }
+
+    void adicionarCurso(Curso curso) {
+        this.cursos.add(curso);
+        curso.alunos.add(this);
+    }
+}
